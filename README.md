@@ -50,4 +50,5 @@ Certifique-se de ajustar os diretórios `test_dir` e `model_path` no script para
 
 ## Considerações Finais
 
-Este README fornece uma visão geral do projeto e como utilizar os códigos fornecidos. Certifique-se de adaptar os caminhos de diretório de acordo com a sua estrutura de projeto.
+Este README fornece uma visão geral do projeto e como utilizar os códigos fornecidos.
+Esse projeto foi realizado para a disciplina de Inteligência Artificial.
