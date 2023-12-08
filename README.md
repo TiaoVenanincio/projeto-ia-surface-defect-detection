@@ -34,7 +34,7 @@ Este script realiza o treinamento do modelo usando o conjunto de treinamento e v
 A avaliação do modelo é realizada executando o script `testador.py`. O script carrega o modelo previamente treinado (`meu_modelo.h5`) e avalia seu desempenho no conjunto de teste.
 
 ```bash
-python treinador.py
+python testador.py
 ```
 
 ### Visualização de Resultados
