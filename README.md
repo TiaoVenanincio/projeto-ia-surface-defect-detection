@@ -14,8 +14,9 @@ pip install -r requirements.txt
 
 O projeto é composto pelos seguintes arquivos:
 
-1. `treinador.py`: Contém o código-fonte para treinar o modelo.
-2. `testador.py`: Contém o código-fonte para testar o modelo.
+1. `src/treinador.py`: Contém o código-fonte para treinar o modelo.
+2. `src/testador.py`: Contém o código-fonte para testar o modelo.
+3. `data`: Contém o conjunto de dados usados no modelo.
 
 ## Utilização
 
