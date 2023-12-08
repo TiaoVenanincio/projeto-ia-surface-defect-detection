@@ -26,7 +26,10 @@ predictions = model1.predict(images)
 
 class_names=list(test_generator.class_indices.keys())
 
-plt.figure(figsize=(10, 10))
+plt.figure(figsize=(12, 12))
+
+# Defina o espaçamento entre os subplots
+plt.subplots_adjust(wspace=0.8, hspace=0.4)
 
 for i in range(9):
     plt.subplot(3, 3, i + 1)
@@ -45,10 +48,10 @@ for i in range(9):
 
     if predicted_label == np.argmax(labels[i]):
         color = 'blue'
-        result_text = "Correct"
+        result_text = "Correto"
     else:
         color = 'red'
-        result_text = "Incorrect"
+        result_text = "Incorreto"
 
     label_text = "True: " + class_names[np.argmax(labels[i])] + ", Pred: " + class_names[predicted_label] + f" ({result_text})"
     plt.xlabel(label_text, color=color)
