@@ -3,8 +3,8 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-
-model1 = keras.models.load_model(r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\meu_modelo.h5")
+model_path = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\meu_modelo.h5"
+model1 = keras.models.load_model(model_path)
 
 test_dir = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data\NEU Metal Surface Defects Data\test"
 
