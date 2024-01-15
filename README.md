@@ -28,11 +28,11 @@ Antes de executar o treinamento, ajuste os diretórios `train_dir`, `test_dir`, 
 python treinador.py
 ```
 
-Este script realiza o treinamento do modelo usando o conjunto de treinamento e valida os resultados usando o conjunto de validação. O modelo treinado é salvo como `meu_modelo.h5`.
+Este script realiza o treinamento do modelo usando o conjunto de treinamento e valida os resultados usando o conjunto de validação. O modelo treinado é salvo como `modelo_TF.h5`.
 
 ### Avaliação do Modelo
 
-A avaliação do modelo é realizada executando o script `testador.py`. O script carrega o modelo previamente treinado (`meu_modelo.h5`) e avalia seu desempenho no conjunto de teste.
+A avaliação do modelo é realizada executando o script `testador.py`. O script carrega o modelo previamente treinado (`modelo_TF.h5`) e avalia seu desempenho no conjunto de teste.
 
 ```bash
 python testador.py

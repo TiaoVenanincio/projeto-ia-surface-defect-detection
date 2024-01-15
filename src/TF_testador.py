@@ -3,13 +3,14 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
+# Carrega o modelo treinado e o lote de testes
 model_path = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\meu_modelo.h5"
 model1 = keras.models.load_model(model_path)
 
 test_dir = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data\NEU Metal Surface Defects Data\test"
-
 test_datagen = ImageDataGenerator(rescale=1./255)
 
+# Configuração do gerador de imagens para o conjunto de testes (test_datagen)
 test_generator = test_datagen.flow_from_directory(test_dir,
                                               target_size=(200, 200),
                                               batch_size=32,
@@ -18,6 +19,7 @@ test_generator = test_datagen.flow_from_directory(test_dir,
 
 images, labels = next(test_generator)    
 
+# Escolhe 9 imagens aleatórias, carregando sua classe verdadeira para compará-la com a predição.
 indices = np.random.choice(range(len(images)), size=9)
 images = images[indices]
 labels = labels[indices]
