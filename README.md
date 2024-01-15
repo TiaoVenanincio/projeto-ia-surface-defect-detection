@@ -2,6 +2,8 @@
 
 Este projeto tem como objetivo a implementação de um modelo de aprendizado profundo (deep learning) para a detecção de defeitos em superfícies metálicas. O conjunto de dados utilizado é o "NEU Metal Surface Defects Data".
 
+(O projeto ainda está em fase de implementação. Atualmente estamos trabalhando em outro método que utiliza a biblioteca Scikit-learn, o qual não está pronto para uso ainda.)
+
 ## Pré-requisitos
 
 Certifique-se de rodar o requirements.txt para instalar as dependências:
