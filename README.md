@@ -27,7 +27,7 @@ O projeto é composto pelos seguintes arquivos:
 Antes de executar o treinamento, ajuste os diretórios `train_dir`, `test_dir`, e `valid_dir` no código para os caminhos corretos no seu sistema de arquivos.
 
 ```bash
-python treinador.py
+python src/treinador.py
 ```
 
 Este script realiza o treinamento do modelo usando o conjunto de treinamento e valida os resultados usando o conjunto de validação. O modelo treinado é salvo como `modelo_TF.h5`.
@@ -37,7 +37,7 @@ Este script realiza o treinamento do modelo usando o conjunto de treinamento e v
 A avaliação do modelo é realizada executando o script `testador.py`. O script carrega o modelo previamente treinado (`modelo_TF.h5`) e avalia seu desempenho no conjunto de teste.
 
 ```bash
-python testador.py
+python src/testador.py
 ```
 
 ### Visualização de Resultados
