@@ -16,25 +16,27 @@ pip install -r requirements.txt
 
 O projeto é composto pelos seguintes arquivos:
 
-1. `src/treinador.py`: Contém o código-fonte para treinar o modelo.
-2. `src/testador.py`: Contém o código-fonte para testar o modelo.
-3. `data`: Contém o conjunto de dados usados no modelo.
+1. `src/TF_treinador.py`: Contém o código-fonte para treinar o modelo usando Tensorflow.
+2. `src/TF_testador.py`: Contém o código-fonte para testar o modelo usando Tensorflow.
+3. `src/SL_gera_hist.py`: Contém o código-fonte gerar os histogramas necessários para treinar o modelo usando Scikit-learn.
+4. `src/SL_treinador.py`: Contém o código-fonte para treinar o modelo usando Scikit-learn e o método de automato celular.
+5. `data`: Contém o conjunto de dados usados no modelo.
 
-## Utilização
+## Utilização - Tensorflow
 
 ### Treinamento do Modelo
 
 Antes de executar o treinamento, ajuste os diretórios `train_dir`, `test_dir`, e `valid_dir` no código para os caminhos corretos no seu sistema de arquivos.
 
 ```bash
-python src/treinador.py
+python src/TF_treinador.py
 ```
 
 Este script realiza o treinamento do modelo usando o conjunto de treinamento e valida os resultados usando o conjunto de validação. O modelo treinado é salvo como `modelo_TF.h5`.
 
 ### Avaliação do Modelo
 
-A avaliação do modelo é realizada executando o script `testador.py`. O script carrega o modelo previamente treinado (`modelo_TF.h5`) e avalia seu desempenho no conjunto de teste.
+A avaliação do modelo é realizada executando o script `TF_testador.py`. O script carrega o modelo previamente treinado (`modelo_TF.h5`) e avalia seu desempenho no conjunto de teste.
 
 ```bash
 python src/testador.py
@@ -44,9 +46,33 @@ python src/testador.py
 
 O script também inclui a geração de gráficos para visualizar o desempenho do modelo ao longo do treinamento, como precisão (`accuracy`,`val_accuracy` )  e perda (`loss`, `val_loss`).
 
+## Utilização - Scikit-learn
+
+### Geração dos histogramas
+
+Antes de executar o treinamento, é necessário gerar os histogramas da imagem através do método descrito no artigo "Cellular Automaton based descriptor for pixel classification". Para isso, ajuste o diretório `data_dir` no script `SL_gera_hist.py`.
+
+```bash
+python src/SL_gera_hist.py
+```
+
+Este script gera 4 histogramas para uma imagem, em seguida tais histogramas são concatenados e salvos no diretório `data/histograms`.
+
+### Treinamento e Avaliação do Modelo
+
+O treinamento e a avaliação do modelo são realizados executando o script `SL_treinador.py`. O script carrega os histogramas previamente gerados e avalia seu desempenho no conjunto de teste definido pela variável `test_size`.
+
+Lembre-se de também ajustar o diretório `data_dir` para este script.
+
+```bash
+python src/SL_treinador.py
+```
+
+O modelo treinado é salvo como `modelo_SL.joblib`.
+
 ## Resultados da Inferência
 
-Ao final da execução, o script gera uma visualização dos resultados da inferência em uma amostra do conjunto de teste, destacando as previsões corretas e incorretas.
+Ao final da execução, os scripts geram uma visualização dos resultados da inferência através de uma matriz de confusão e outras métricas.
 
 Certifique-se de ajustar os diretórios `test_dir` e `model_path` no script para os caminhos corretos no seu sistema de arquivos.
 
