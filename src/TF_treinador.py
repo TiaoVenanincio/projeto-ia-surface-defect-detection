@@ -13,9 +13,10 @@ def plot_history(history,metric):
     plt.show()
 
 #Diretório dos dados
-train_dir = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data\NEU Metal Surface Defects Data\train"
-test_dir = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data\NEU Metal Surface Defects Data\test"
-valid_dir = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data\NEU Metal Surface Defects Data\valid"
+data_dir  = f"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data"
+train_dir = f"{data_dir}\NEU Metal Surface Defects Data\train"
+test_dir = f"{data_dir}\NEU Metal Surface Defects Data\test"
+valid_dir = f"{data_dir}\NEU Metal Surface Defects Data\valid"
 
 # Configuração do gerador de imagens para o conjunto de treinamento (train_datagen)
 train_datagen = ImageDataGenerator(

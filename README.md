@@ -26,7 +26,7 @@ O projeto é composto pelos seguintes arquivos:
 
 ### Treinamento do Modelo
 
-Antes de executar o treinamento, ajuste os diretórios `train_dir`, `test_dir`, e `valid_dir` no código para os caminhos corretos no seu sistema de arquivos.
+Antes de executar o treinamento, ajuste o diretório `data_dir` no código para o caminho correto no seu sistema de arquivo.
 
 ```bash
 python src/TF_treinador.py
