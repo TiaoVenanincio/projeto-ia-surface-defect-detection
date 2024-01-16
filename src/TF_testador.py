@@ -2,9 +2,10 @@ import numpy as np
 from tensorflow import keras
 import matplotlib.pyplot as plt
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from sklearn.metrics import confusion_matrix, classification_report
 
 # Carrega o modelo treinado e o lote de testes
-model_path = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\meu_modelo.h5"
+model_path = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\modelo_TF.h5"
 model1 = keras.models.load_model(model_path)
 
 test_dir = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data\NEU Metal Surface Defects Data\test"
@@ -59,3 +60,24 @@ for i in range(9):
     plt.xlabel(label_text, color=color)
 
 plt.show()
+
+# Obtenha todas as previsões para o conjunto de testes
+all_predictions = model1.predict(test_generator)
+
+# Converta as previsões em rótulos preditos
+predicted_labels = np.argmax(all_predictions, axis=1)
+
+# Converta as labels reais em rótulos reais
+true_labels = test_generator.classes
+
+# Crie a matriz de confusão
+confusion_mat = confusion_matrix(true_labels, predicted_labels)
+
+# Exiba a matriz de confusão
+print("Matriz de Confusão:")
+print(confusion_mat)
+
+# Gere um relatório de classificação
+class_report = classification_report(true_labels, predicted_labels, target_names=class_names)
+print("\nRelatório de Classificação:")
+print(class_report)
