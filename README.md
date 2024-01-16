@@ -2,7 +2,7 @@
 
 Este projeto tem como objetivo a implementação de um modelo de aprendizado profundo (deep learning) para a detecção de defeitos em superfícies metálicas. O conjunto de dados utilizado é o "NEU Metal Surface Defects Data".
 
-(O projeto ainda está em fase de implementação. Atualmente estamos trabalhando em outro método que utiliza a biblioteca Scikit-learn, o qual não está pronto para uso ainda.)
+(O projeto ainda está em fase de implementação. Atualmente estamos trabalhando em outro método que utiliza a biblioteca Scikit-learn, o qual ainda está sendo testado.)
 
 ## Pré-requisitos
 
@@ -27,7 +27,7 @@ O projeto é composto pelos seguintes arquivos:
 Antes de executar o treinamento, ajuste os diretórios `train_dir`, `test_dir`, e `valid_dir` no código para os caminhos corretos no seu sistema de arquivos.
 
 ```bash
-python treinador.py
+python src/treinador.py
 ```
 
 Este script realiza o treinamento do modelo usando o conjunto de treinamento e valida os resultados usando o conjunto de validação. O modelo treinado é salvo como `modelo_TF.h5`.
@@ -37,7 +37,7 @@ Este script realiza o treinamento do modelo usando o conjunto de treinamento e v
 A avaliação do modelo é realizada executando o script `testador.py`. O script carrega o modelo previamente treinado (`modelo_TF.h5`) e avalia seu desempenho no conjunto de teste.
 
 ```bash
-python testador.py
+python src/testador.py
 ```
 
 ### Visualização de Resultados
