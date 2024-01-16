@@ -123,5 +123,5 @@ def gerador_histogramas(data_dir):
                 #1800 é o tamanho do dataset
                 print(f"Progresso = {i / 1800 * 100:.1f} por cento")
 
-
-gerador_histogramas(f"C:/Users/Sebastiao/Desktop/Projetos/projeto-ia-surface-defect/data")
+data_dir = f"C:/Users/Sebastiao/Desktop/Projetos/projeto-ia-surface-defect/data"
+gerador_histogramas(data_dir)
