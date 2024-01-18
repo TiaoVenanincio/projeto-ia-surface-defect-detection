@@ -4,7 +4,17 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from sklearn.metrics import confusion_matrix, classification_report
 
-def exibe_9_exemplos(images, labels, predictions, class_names):
+def exibe_9_exemplos(images, labels, model1, class_names):
+    #O objetivo dessa função é exibir 9 imagens aleatórias e mostrar qual foi a predição
+    # e a classe verdadeira.
+
+    # Escolhe 9 imagens aleatórias, carregando sua classe verdadeira para compará-la com a predição.
+    indices = np.random.choice(range(len(images)), size=9)
+    images = images[indices]
+    labels = labels[indices]
+    predictions = model1.predict(images)
+    
+
     plt.figure(figsize=(12, 12))
 
     # Define o espaçamento entre os subplots
@@ -54,16 +64,10 @@ test_generator = test_datagen.flow_from_directory(test_dir,
 
 images, labels = next(test_generator)    
 
-# Escolhe 9 imagens aleatórias, carregando sua classe verdadeira para compará-la com a predição.
-indices = np.random.choice(range(len(images)), size=9)
-images = images[indices]
-labels = labels[indices]
-
-predictions = model1.predict(images)
-
 class_names=list(test_generator.class_indices.keys())
 
-exibe_9_exemplos(images, labels, predictions, class_names)
+#Função para exibir 9 imagens como exemplos
+exibe_9_exemplos(images, labels, model1, class_names)
 
 # Obtem todas as previsões para o conjunto de testes
 all_predictions = model1.predict(test_generator)

@@ -75,6 +75,52 @@ Ao final da execução, os scripts geram uma visualização dos resultados da in
 
 Certifique-se de ajustar os diretórios `test_dir` e `model_path` no script para os caminhos corretos no seu sistema de arquivos.
 
+### Resultados obtidos
+
+#### Tensorflow
+Matriz de Confusão:
+[[27  1  0  0  2  0]
+ [ 0 30  0  0  0  0]
+ [ 2  0 25  2  1  0]
+ [ 0  0  1 29  0  0]
+ [ 0  1  0  0 29  0]
+ [ 0  6  0  0  0 24]]
+
+Relatório de Classificação:
+              precision    recall  f1-score   support
+
+   Arranhoes       0.93      0.90      0.92        30
+Craqueamento       0.79      1.00      0.88        30
+  Depressoes       0.96      0.83      0.89        30
+    Inclusao       0.94      0.97      0.95        30
+   Laminacao       0.91      0.97      0.94        30
+     Manchas       1.00      0.80      0.89        30
+
+    accuracy                           0.91       180
+
+
+#### Scikit-learn
+Matriz de Confusão:
+[[63  0  1  4  0  0]
+ [ 0 62  0  0  1  3]
+ [ 0  0 58  1  0  0]
+ [ 0  0  1 47  0  0]
+ [ 0  1  0  0 65  0]
+ [ 0  0  0  0  0 53]]
+
+Relatório de Classificação:
+              precision    recall  f1-score   support
+
+   Arranhoes       1.00      0.93      0.96        68
+Craqueamento       0.98      0.94      0.96        66
+  Depressoes       0.97      0.98      0.97        59
+    Inclusao       0.90      0.98      0.94        48
+   Laminacao       0.98      0.98      0.98        66
+     Manchas       0.95      1.00      0.97        53
+
+    accuracy                           0.97       360
+
+
 ## Considerações Finais
 
 Este README fornece uma visão geral do projeto e como utilizar os códigos fornecidos.
