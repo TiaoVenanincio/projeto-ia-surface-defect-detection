@@ -13,10 +13,10 @@ def plot_history(history,metric):
     plt.show()
 
 #Diretório dos dados
-data_dir  = f"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data"
-train_dir = f"{data_dir}\NEU Metal Surface Defects Data\train"
-test_dir = f"{data_dir}\NEU Metal Surface Defects Data\test"
-valid_dir = f"{data_dir}\NEU Metal Surface Defects Data\valid"
+data_dir  = r"C:\Users\Sebastiao\Desktop\Projetos\projeto-ia-surface-defect\data"
+train_dir = f"{data_dir}/NEU Metal Surface Defects Data/train"
+test_dir = f"{data_dir}/NEU Metal Surface Defects Data/test"
+valid_dir = f"{data_dir}/NEU Metal Surface Defects Data/valid"
 
 # Configuração do gerador de imagens para o conjunto de treinamento (train_datagen)
 train_datagen = ImageDataGenerator(
@@ -51,7 +51,7 @@ test_generator = test_datagen.flow_from_directory(test_dir,
 class_names = train_generator.class_indices
 class_names = list(class_names.keys())
 
-# Definição da arquitetura do modelo sequencial (Sequential)
+# Definição da arquitetura do modelo Sequential
 model1 = Sequential([
     # Primeira camada convolucional com 32 filtros de tamanho (2,2), função de ativação ReLU e entrada de shape (200, 200, 3)
     Conv2D(32, (2, 2), activation='relu', input_shape=(200, 200, 3)),
@@ -90,7 +90,7 @@ model1.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accu
 history = model1.fit(train_generator, epochs=20, batch_size=32, validation_data=valid_generator)
 
 
-model1.save("modelo_TF.h5")
+model1.save("modelo_TF.keras")
 
 plot_history(history,"accuracy")
 plot_history(history,"loss")
