@@ -100,25 +100,28 @@ Craqueamento       0.79      1.00      0.88        30
 
 
 #### Scikit-learn
-Matriz de Confusão:
-[[63  0  1  4  0  0]
- [ 0 62  0  0  1  3]
- [ 0  0 58  1  0  0]
- [ 0  0  1 47  0  0]
- [ 0  1  0  0 65  0]
- [ 0  0  0  0  0 53]]
+- Matriz de Confusão:
+|             | Arranhoes | Craqueamento | Depressoes | Inclusao | Laminacao | Manchas |
+|-------------|-----------|--------------|------------|----------|-----------|---------|
+| Arranhoes   | 63        | 0            | 1          | 4        | 0         | 0       |
+| Craqueamento| 0         | 62           | 0          | 0        | 1         | 3       |
+| Depressoes  | 0         | 0            | 58         | 1        | 0         | 0       |
+| Inclusao    | 0         | 0            | 1          | 47       | 0         | 0       |
+| Laminacao   | 0         | 1            | 0          | 0        | 65        | 0       |
+| Manchas     | 0         | 0            | 0          | 0        | 0         | 53      |
 
-Relatório de Classificação:
-              precision    recall  f1-score   support
+- Relatório de Classificação:
+|               | Precision | Recall  | F1-Score | Support |
+|---------------|-----------|---------|----------|---------|
+| Arranhoes     | 1.00      | 0.93    | 0.96     | 68      |
+| Craqueamento  | 0.98      | 0.94    | 0.96     | 66      |
+| Depressoes    | 0.97      | 0.98    | 0.97     | 59      |
+| Inclusao      | 0.90      | 0.98    | 0.94     | 48      |
+| Laminacao     | 0.98      | 0.98    | 0.98     | 66      |
+| Manchas       | 0.95      | 1.00    | 0.97     | 53      |
 
-   Arranhoes       1.00      0.93      0.96        68
-Craqueamento       0.98      0.94      0.96        66
-  Depressoes       0.97      0.98      0.97        59
-    Inclusao       0.90      0.98      0.94        48
-   Laminacao       0.98      0.98      0.98        66
-     Manchas       0.95      1.00      0.97        53
+Accuracy: 0.97
 
-    accuracy                           0.97       360
 
 
 ## Considerações Finais
