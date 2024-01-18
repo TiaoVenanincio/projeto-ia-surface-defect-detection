@@ -32,11 +32,11 @@ Antes de executar o treinamento, ajuste o diretório `data_dir` no código para 
 python src/TF_treinador.py
 ```
 
-Este script realiza o treinamento do modelo usando o conjunto de treinamento e valida os resultados usando o conjunto de validação. O modelo treinado é salvo como `modelo_TF.h5`.
+Este script realiza o treinamento do modelo usando o conjunto de treinamento e valida os resultados usando o conjunto de validação. O modelo treinado é salvo como `modelo_TF.keras`.
 
 ### Avaliação do Modelo
 
-A avaliação do modelo é realizada executando o script `TF_testador.py`. O script carrega o modelo previamente treinado (`modelo_TF.h5`) e avalia seu desempenho no conjunto de teste.
+A avaliação do modelo é realizada executando o script `TF_testador.py`. O script carrega o modelo previamente treinado (`modelo_TF.keras`) e avalia seu desempenho no conjunto de teste.
 
 ```bash
 python src/testador.py
