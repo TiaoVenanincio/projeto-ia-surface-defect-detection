@@ -1,8 +1,6 @@
 # Projeto IA para Detecção de Defeitos em Superfícies Metálicas
 
-Este projeto tem como objetivo a implementação de um modelo de aprendizado profundo (deep learning) para a detecção de defeitos em superfícies metálicas. O conjunto de dados utilizado é o "NEU Metal Surface Defects Data".
-
-(O projeto ainda está em fase de implementação. Atualmente estamos trabalhando em outro método que utiliza a biblioteca Scikit-learn, o qual ainda está sendo testado.)
+Este projeto tem como objetivo a implementação de um modelo de aprendizado profundo e um modelo de aprendizado de máquina (RandomForest) para a detecção de defeitos em superfícies metálicas. O conjunto de dados utilizado é o "NEU Metal Surface Defects Data".
 
 ## Pré-requisitos
 
@@ -22,7 +20,7 @@ O projeto é composto pelos seguintes arquivos:
 4. `src/SL_treinador.py`: Contém o código-fonte para treinar o modelo usando Scikit-learn e o método de automato celular.
 5. `data`: Contém o conjunto de dados usados no modelo.
 
-## Utilização - Tensorflow
+## Utilização - Tensorflow (Deep Learning)
 
 ### Treinamento do Modelo
 
@@ -46,7 +44,7 @@ python src/testador.py
 
 O script também inclui a geração de gráficos para visualizar o desempenho do modelo ao longo do treinamento, como precisão (`accuracy`,`val_accuracy` )  e perda (`loss`, `val_loss`).
 
-## Utilização - Scikit-learn
+## Utilização - Scikit-learn (RandomForest)
 
 ### Geração dos histogramas
 
@@ -69,6 +67,7 @@ python src/SL_treinador.py
 ```
 
 O modelo treinado é salvo como `modelo_SL.joblib`.
+Os resultados dos testes são mostrados no final da execução deste script.
 
 ## Resultados da Inferência
 
