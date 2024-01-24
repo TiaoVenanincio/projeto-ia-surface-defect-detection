@@ -4,6 +4,8 @@ Este projeto tem como objetivo a implementação de um modelo de aprendizado pro
 
 ## Pré-requisitos
 
+Você pode clonar o repositório em: https://github.com/TiaoVenanincio/projeto-ia-surface-defect-detection.git
+
 Certifique-se de rodar o requirements.txt para instalar as dependências:
 
 ```bash
